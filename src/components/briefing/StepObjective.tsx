@@ -17,16 +17,16 @@ export function StepObjective({ data, onChange, errors }: Props) {
   return (
     <div className="space-y-4 fade-in">
       <div>
-        <h2 className="text-lg font-semibold">Objetivo da Peça</h2>
-        <p className="text-sm text-muted-foreground">Defina claramente o que se espera alcançar</p>
+        <h2 className="text-lg font-semibold">Objetivo Alvo</h2>
+        <p className="text-sm text-muted-foreground">Defina o objetivo do projeto</p>
       </div>
 
       <div className="space-y-3">
         <div>
-          <Label htmlFor="objective">Objetivo principal *</Label>
+          <Label htmlFor="objective">Objetivo Principal *</Label>
           <Textarea
             id="objective"
-            placeholder="Descreva com clareza o que essa peça precisa comunicar e alcançar. Seja específico. Ex: 'Gerar 500 leads qualificados para o lançamento do produto X através de anúncios no Instagram Stories'"
+            placeholder="Descreva com clareza o que o objetivo espera comunicar e ou alcançar. Seja específico. Ex: 'Gerar 500 leads qualificados para o lançamento do produto X através de anúncios no Instagram Stories'"
             value={data.objective}
             onChange={e => onChange({ objective: e.target.value })}
             className={`min-h-[100px] ${errors.objective ? 'border-destructive' : ''}`}
@@ -46,25 +46,25 @@ export function StepObjective({ data, onChange, errors }: Props) {
         </div>
 
         <div>
-          <Label htmlFor="expectedResults">Resultados esperados *</Label>
+          <Label htmlFor="expectedResults">Critérios de aceite *</Label>
           <Textarea
             id="expectedResults"
-            placeholder="O que define sucesso para esse projeto?"
+            placeholder="Defina os critérios de aceite para o projeto"
             value={data.expectedResults}
             onChange={e => onChange({ expectedResults: e.target.value })}
             className={`min-h-[80px] ${errors.expectedResults ? 'border-destructive' : ''}`}
           />
-          {errors.expectedResults && <p className="text-xs text-destructive mt-1">{errors.expectedResults}</p>}
+          {errors.expectedResults && <p className="text-xs text-destructive mt-1.5">{errors.expectedResults}</p>}
         </div>
 
         <div>
-          <Label htmlFor="kpis">KPIs / Métricas</Label>
+          <Label htmlFor="kpis">Objetivos & Resultados </Label>
           <Textarea
             id="kpis"
             placeholder="Ex: CTR > 2%, 1000 cliques, 50 conversões"
             value={data.kpis}
             onChange={e => onChange({ kpis: e.target.value })}
-            className="min-h-[60px]"
+            className="min-h-[60px] mb-1.5"
           />
         </div>
       </div>

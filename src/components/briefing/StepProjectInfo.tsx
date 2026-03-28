@@ -14,12 +14,12 @@ export function StepProjectInfo({ data, onChange, errors }: Props) {
     <div className="space-y-4 fade-in">
       <div>
         <h2 className="text-lg font-semibold">Informações do Projeto</h2>
-        <p className="text-sm text-muted-foreground">Dados básicos sobre o projeto</p>
+        <p className="text-sm text-muted-foreground font-medium">Dados básicos sobre o projeto</p>
       </div>
 
       <div className="space-y-3">
         <div>
-          <Label htmlFor="projectName">Nome do projeto *</Label>
+          <Label htmlFor="projectName" >Nome do projeto *</Label>
           <Input
             id="projectName"
             placeholder="Ex: Campanha Black Friday 2026"
@@ -27,7 +27,7 @@ export function StepProjectInfo({ data, onChange, errors }: Props) {
             onChange={e => onChange({ projectName: e.target.value })}
             className={errors.projectName ? 'border-destructive' : ''}
           />
-          {errors.projectName && <p className="text-xs text-destructive mt-1">{errors.projectName}</p>}
+          {errors.projectName && <p className="text-xs text-destructive mt-1.5">{errors.projectName}</p>}
         </div>
 
         <div>
@@ -39,7 +39,7 @@ export function StepProjectInfo({ data, onChange, errors }: Props) {
             onChange={e => onChange({ clientName: e.target.value })}
             className={errors.clientName ? 'border-destructive' : ''}
           />
-          {errors.clientName && <p className="text-xs text-destructive mt-1">{errors.clientName}</p>}
+          {errors.clientName && <p className="text-xs text-destructive mt-1.5">{errors.clientName}</p>}
         </div>
 
         <div>
@@ -63,6 +63,7 @@ export function StepProjectInfo({ data, onChange, errors }: Props) {
             id="deadline"
             type="date"
             value={data.deadline}
+            min={data.createdAt?.split('T')[0] || new Date().toISOString().split('T')[0]}
             onChange={e => onChange({ deadline: e.target.value })}
             className={errors.deadline ? 'border-destructive' : ''}
           />

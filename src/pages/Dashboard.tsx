@@ -61,7 +61,7 @@ export default function Dashboard() {
               <p className="text-sm text-muted-foreground font-medium mt-1">Gerencie seus briefings em um só lugar</p>
             </div>
             <Button size="sm" onClick={() => navigate('/briefing/new')}>
-              <Plus className="w-4 h-4 mr-1" /> Novo
+              <Plus className="w-4 h-4 mr-1" /> Novo Briefing
             </Button>
           </div>
 

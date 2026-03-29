@@ -56,9 +56,9 @@ export default function Dashboard() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <Link to="/">
-                <h1 className="text-xl font-bold tracking-tight">Briefing</h1>
+                <h1 className="text-xl font-bold tracking-tight">Briefing - Flow</h1>
               </Link>
-              <p className="text-sm text-muted-foreground font-medium">Gerencie seus briefings</p>
+              <p className="text-sm text-muted-foreground font-medium mt-1">Gerencie seus briefings em um só lugar</p>
             </div>
             <Button size="sm" onClick={() => navigate('/briefing/new')}>
               <Plus className="w-4 h-4 mr-1" /> Novo

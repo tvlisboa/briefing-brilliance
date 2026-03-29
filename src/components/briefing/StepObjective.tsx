@@ -61,7 +61,7 @@ export function StepObjective({ data, onChange, errors }: Props) {
           <Label htmlFor="kpis">Objetivos & Resultados </Label>
           <Textarea
             id="kpis"
-            placeholder="Ex: CTR > 2%, 1000 cliques, 50 conversões"
+            placeholder="Conversão de clientes, novas campanhas e divulgação de marca"
             value={data.kpis}
             onChange={e => onChange({ kpis: e.target.value })}
             className="min-h-[60px] mb-1.5"

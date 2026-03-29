@@ -7,6 +7,7 @@ import { ScoreDisplay } from '@/components/briefing/ScoreDisplay';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Plus, Search, FileText, Calendar, Trash2, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const STATUS_FILTERS: { value: BriefingStatus | 'all'; label: string }[] = [
   { value: 'all', label: 'Todos' },
@@ -54,8 +55,10 @@ export default function Dashboard() {
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-xl font-bold tracking-tight">Briefing</h1>
-              <p className="text-sm text-muted-foreground">Gerencie seus briefings</p>
+              <Link to="/">
+                <h1 className="text-xl font-bold tracking-tight">Briefing</h1>
+              </Link>
+              <p className="text-sm text-muted-foreground font-medium">Gerencie seus briefings</p>
             </div>
             <Button size="sm" onClick={() => navigate('/briefing/new')}>
               <Plus className="w-4 h-4 mr-1" /> Novo
@@ -97,11 +100,10 @@ export default function Dashboard() {
             <button
               key={f.value}
               onClick={() => setStatusFilter(f.value)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
-                statusFilter === f.value
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-secondary'
-              }`}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${statusFilter === f.value
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-muted text-muted-foreground hover:bg-secondary'
+                }`}
             >
               {f.label}
             </button>

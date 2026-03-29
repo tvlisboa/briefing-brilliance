@@ -64,7 +64,6 @@ export function StepProjectInfo({ data, onChange, errors }: Props) {
             type="date"
             min={data.createdAt?.split('T')[0] || new Date().toISOString().split('T')[0]}
             value={data.deadline}
-            min={data.createdAt?.split('T')[0] || new Date().toISOString().split('T')[0]}
             onChange={e => onChange({ deadline: e.target.value })}
             className={errors.deadline ? 'border-destructive' : ''}
           />
